@@ -1,0 +1,10 @@
+---
+  - name: this playbook will check the status of HTTPD service
+    hosts: dev-servers
+    gather_facts: yes
+    tasks:
+      - name: Checkking HTTPD status on CenOS
+        when: ansible_distribution == "CentOS"
+        service_facts:
+      - debug:
+          var: ansible_facts.services.httpd.state

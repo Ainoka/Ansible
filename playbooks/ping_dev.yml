@@ -1,0 +1,7 @@
+---
+  - name: This is ping playbook for devinventory
+    hosts: development
+    gather_facts: no
+    tasks:
+      - name: Ping Hosts
+        ping:

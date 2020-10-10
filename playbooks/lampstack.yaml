@@ -1,0 +1,29 @@
+---
+  - name: Thos playbook will install LAMP
+    hosts: development
+    tasks:
+      - name: Update Packages
+        yum:
+          name: '*'
+          state: latest
+      - name: install packages httpd, php, php-mysql on Application server
+        when: ansible_hostname == "application"
+        yum:
+          name:
+            - httpd
+            - php
+            - php-mysql
+          state: latest
+      - name: Install the latest version of MySQL on Database server
+        when: ansible_hostname == "database"
+        yum:
+          name: 
+            - mariadb-server
+            - mariadb
+          state: latest
+      - name: Start HTTPD on Application server
+        when: ansible_hostname == "application"
+        systemd:
+          state: started
+          enabled: yes
+          name: httpd

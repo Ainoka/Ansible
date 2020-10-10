@@ -1,0 +1,7 @@
+---
+  - name: This playbook will change a hostname host to app
+    hosts: app
+    tasks:
+      - name: change hostname to app
+        hostname:
+          name: app

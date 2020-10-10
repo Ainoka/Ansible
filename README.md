@@ -1,2 +1,2 @@
 # Ansible
-this is Ansible repository
+Ansible - Simple Open Source Configuration Management Tool.

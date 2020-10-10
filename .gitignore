@@ -1,0 +1,11 @@
+# Ignore inventory folder
+invernoty
+*inventory
+invernoty*
+
+# Ignore variables folder
+variables
+variables*
+*variables
+var
+var*

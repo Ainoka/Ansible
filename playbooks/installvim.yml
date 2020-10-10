@@ -1,0 +1,8 @@
+---
+  - name: This playbook will install vim
+    hosts: app
+    tasks:
+      - name: Installing vim using yum 
+        yum:
+          name: vim
+          state: present

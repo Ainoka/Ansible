@@ -1,0 +1,8 @@
+---
+  - name: This playbook will delete file
+    hosts: development
+    tasks:
+      - name: delete file "testfile2" under /tmp 
+        file:
+          path: /tmp/testfile2
+          state: absent

@@ -1,0 +1,9 @@
+---
+  - name: This playbook will create file in remote hosts
+    hosts: development
+    tasks:
+      - name: Create file "testfile2" under /tmp with permission
+        file:
+          path: /tmp/testfile2
+          state: touch
+          mode: u=rwx,g=rw,o=r
