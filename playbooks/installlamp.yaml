@@ -3,7 +3,7 @@
     hosts: dev-servers
     tasks:
       - name: Install packages httpd, php, php-mysql on CentOS6
-        when: ansible_distribuution_major_version == "6"
+        when: ansible_distribution_major_version == "6"
         yum:
           name:
             - httpd

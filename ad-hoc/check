@@ -1,0 +1,7 @@
+###To check user UID 
+#ansible -i inventory/devinventory dev-servers -m shell -a  "cat /etc/passwd"
+
+### To check the /tmp. see the permissions: ls -l
+#ansible -i inventory/devinventory dev-servers -m command -a "ls -l /tmp"
+
+#ansible -i inventory/devinventory dev-servers -m shell -a "cat /etc/passwd"

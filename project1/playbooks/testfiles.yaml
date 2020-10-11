@@ -10,3 +10,13 @@
           path: /tmp/{{file_name}}
           state: "{{file_state}}"
           mode: "{{file_mode}}"
+      - name: add "Hello World" content 
+        lineinfile:
+            path: /tmp/{{file_name}}
+            line: "{{text_1}}"
+            create: yes
+      - name: add multiple file
+        blockinfile:
+            path: /tmp/{{file_name}}
+            block: |
+              {{block}}
