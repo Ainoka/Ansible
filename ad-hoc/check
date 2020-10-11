@@ -1,7 +1,7 @@
 ###To check user UID 
 #ansible -i inventory/devinventory dev-servers -m shell -a  "cat /etc/passwd"
 
-### To check the /tmp. see the permissions: ls -l
+### To see the permissions files under /tmp: ls -l
 #ansible -i inventory/devinventory dev-servers -m command -a "ls -l /tmp"
-
+### To
 #ansible -i inventory/devinventory dev-servers -m shell -a "cat /etc/passwd"
