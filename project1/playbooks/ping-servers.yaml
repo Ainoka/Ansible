@@ -1,0 +1,9 @@
+---
+  - name: This is ping playbook for devinventory
+    hosts: "{{group}}"
+    gather_facts: no
+    vars_files:
+      - "../variables/ping-values.yaml"
+    tasks:
+      - name: Ping 
+        ping:
