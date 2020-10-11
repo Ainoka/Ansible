@@ -1,0 +1,12 @@
+---
+  - name:
+    hosts: "{{group}}"
+    gather_facts: "{{gather_facts}}"
+    vars_files:
+      - "../variables/testfiles-values.yaml"
+    tasks:
+      - name:
+        file:
+          path: /tmp/{{file_name}}
+          state: "{{file_state}}"
+          mode: "{{file_mode}}"
