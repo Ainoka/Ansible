@@ -57,3 +57,10 @@
           src: /var/www/html/wp-config-sample.php
           dest: /var/www/html/wp-config.php
           remote_src: yes
+
+      - name: Give insecure permissions to an existing file
+        when: ansible_distribution_major_version == "6"
+        file:
+          path: /var/www/html/wp-config.php
+          owner: apache
+          group: apache
