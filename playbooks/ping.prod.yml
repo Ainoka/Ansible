@@ -1,6 +1,6 @@
 ---
   - name: This is ping playbook for production
-    hosts: production
+    hosts: #enter you hosts 
     tasks:
       - name: Ping Hosts
         ping:
