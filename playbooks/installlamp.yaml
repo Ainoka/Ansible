@@ -36,3 +36,17 @@
         shell:
           cmd: cp -r /tmp/wordpress/* /var/www/html
 
+      - name: create a file info.php
+        when: ansible_distribution_major_version == "6"
+        file:
+          path: /var/www/html/info.php
+          state: touch 
+
+      - name: write in info.php
+        when: ansible_distribution_major_version == "6"
+        blockinfile:
+          path: /var/www/html/info.php
+          block: |
+            <?php
+            phpinfo();
+            ?>
