@@ -64,3 +64,10 @@
           path: /var/www/html/wp-config.php
           owner: apache
           group: apache
+          mode: '0777'
+
+      - name: Start HTTPD on CentOS6
+        when: ansible_distribution_major_version == "6"
+        service:
+          name: httpd
+          state: restarted
