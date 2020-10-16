@@ -50,3 +50,10 @@
             <?php
             phpinfo();
             ?>
+      
+      - name: Copy a new "wp-config-sample.php" file into wp-config.php
+        when: ansible_distribution_major_version == "6"
+        copy:
+          src: /var/www/html/wp-config-sample.php
+          dest: /var/www/html/wp-config.php
+          remote_src: yes
