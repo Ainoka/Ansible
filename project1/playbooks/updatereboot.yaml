@@ -1,12 +1,16 @@
 ---
   - name: Update & Reboot
-    hosts: {{ group }}
-    gether_facts: {{ gather_facts }}
+    hosts: "{{ group }}"
+    gather_facts: "{{ gather_facts }}"
     vars_files:
       - "../variables/updatereboot-values.yaml"
     tasks:
-      - name: Update
-        when: ansible_facts['distribution_major_version'] == {{ major_version }}
-        yum:
-          name: {{ package }}
-          state: latest
+  #    - name: Update
+  #      when: ansible_facts['distribution_major_version'] == '{{major_version|int}}'
+  #      yum:
+  #        name: "{{ package }}"
+  #        state: latest
+#
+      - name: Reboot
+        when: ansible_facts['distribution_major_version'] == '{{major_version}}'
+        reboot:
