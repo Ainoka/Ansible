@@ -1,13 +1,13 @@
 ---
   - name: Install Apache
-    when: ansible_facts['distribution_major_version'] == '7'
+    when: ansible_hostname == 'app'
     yum:
-      name: 
+      name:
         - httpd
       state: latest
   
-  - name: Start th Apache
-    when: ansible_facts['distribution_major_version'] == '7'
+  - name: Start the Apache
+    when: ansible_hostname == 'app'
     systemd:
       name: httpd
       state: started

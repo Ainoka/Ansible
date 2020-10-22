@@ -6,3 +6,6 @@
       - "../variables/dev-tasks-values.yaml"
     tasks:
       - include: ../tasks/ping.yaml
+      - include: ../tasks/apacheinstall.yaml
+      - include: ../tasks/copyfiles.yaml
+      - include: ../tasks/removeapache.yaml

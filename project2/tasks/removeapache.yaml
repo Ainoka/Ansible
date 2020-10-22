@@ -1,0 +1,38 @@
+- name: Service Facts
+  service_facts:
+  when: ansible_hostname == "db"
+
+- debug:
+    var: ansible_facts.services.keys ()
+  when:
+    - ansible_hostname == "db"
+    - apache in ansible_facts.services.keys()
+
+#- name: Check if Service Exists
+#  when: ansible_hostname == "db"
+#  stat: path=/etc/init.d/httpd
+#  register: service_status
+#
+#- name: Stop Service
+#  service: name={{httpd}} state=stopped
+#  when:
+#  - ansible_hostname == "db"
+#  - service_status.stat.exists
+#  register: service_stopped
+#- name: Stop apache 
+#  systemd: name={{httpd}}=stopped
+#  when: 
+#    - ansible_hostname == "db"
+#    - ansible_facts.services["httpd.service"] == "exists"  or 
+#      ansible_facts.services["httpd.service"].state == "running"    
+#  register: service_status
+#  
+#  systemd:
+#    name: httpd
+#    state: stopped
+
+#- name: Remove Apache
+#  when: ansible_hostname == "db" and ansible_facts.services["httpd.service"].state == "stopped"
+#  yum:
+#    name: httpd
+#    state: absent
